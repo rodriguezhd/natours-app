@@ -31,7 +31,7 @@ pipeline {
                 sh script: '''
                 #!/bin/bash
                 cd $WORKSPACE/natours-app
-                docker build . --network host -t borjasprodolliet/natours-app:${BUILD_NUMBER}
+                docker build . --network host -t hrodriguez73/pin:${BUILD_NUMBER}
                 '''
             }
         }
@@ -39,7 +39,7 @@ pipeline {
         stage('docker push') {
             steps{
                 sh(script: """
-                    docker push borjasprodolliet/natours-app:${BUILD_NUMBER}
+                    docker push hrodriguez73/pin:${BUILD_NUMBER}
                 """)
             }
         }
